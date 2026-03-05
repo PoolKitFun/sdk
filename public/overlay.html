@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PoolKit Overlay</title>
+<script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+
+<h2 id="poll"></h2>
+
+<ul id="options"></ul>
+
+<script>
+
+const socket = io()
+
+socket.on("poll_update", (poll) => {
+
+  if(!poll) return
+
+  document.getElementById("poll").innerText = poll.question
+
+  const list = document.getElementById("options")
+  list.innerHTML = ""
+
+  poll.options.forEach(o => {
+
+    const li = document.createElement("li")
+    li.innerText = o.text + " - " + o.votes
+    list.appendChild(li)
+
+  })
+
+})
+
+</script>
+
+</body>
+</html>
