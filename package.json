@@ -1,0 +1,16 @@
+{
+  "name": "poolkit",
+  "version": "1.0.0",
+  "description": "Toolkit for pump.fun streamers with automod, overlays, polls and TTS",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "dotenv": "^16.4.0",
+    "bad-words": "^3.0.4"
+  }
+}
